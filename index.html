@@ -13,10 +13,12 @@
       align-items: center;
     }
     #qr {
-      width: 80vmin;
-      height: 80vmin;
-      max-width: 600px;
-      max-height: 600px;
+      width: 500px;
+      height: 500px;
+    }
+    canvas, img {
+      display: block;
+      margin: auto;
     }
   </style>
 </head>
@@ -27,10 +29,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script>
     const LINK = "https://app.mediafire.com/folder/0erfbe0d3cxu6/unknown";
-    new QRCode(document.getElementById("qr"), {
+    const qrDiv = document.getElementById("qr");
+    new QRCode(qrDiv, {
       text: LINK,
-      width: document.getElementById("qr").clientWidth,
-      height: document.getElementById("qr").clientHeight,
+      width: 500,
+      height: 500,
       correctLevel: QRCode.CorrectLevel.H
     });
   </script>
